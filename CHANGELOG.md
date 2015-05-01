@@ -1,8 +1,14 @@
 # CHANGELOG
 
+## 2.8.2 - 2015-04-23
+
+* `Aws\Ec2` - Added support for new VM Import APIs, `including ImportImage`.
+* `Aws\Iam` - Added support for the `GetAccessKeyLastUsed` operation.
+* `Aws\CloudSearchDomain` - Search responses now include the expressions requested.
+
 ## 2.8.1 - 2015-04-16
 
-* `Aws\ConfigService` - Add the 'GetResourceConfigHistory' iterator.
+* `Aws\ConfigService` - Added the 'GetResourceConfigHistory' iterator.
 * `Aws\CognitoSync` - Added support for events.
 * `Aws\Lambda` - Fixed an issue with the Invoke operation.
 
