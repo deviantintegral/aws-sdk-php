@@ -1,5 +1,24 @@
 # CHANGELOG
 
+## 2.8.5 - 2015-05-18
+
+* `Aws\Ec2\Ec2Client` - Added support for the new spot fleet API operations.
+* `Aws\OpsWorks\OpsWorksClient` - Added support for custom auto-scaling based
+  on CloudWatch alarms.
+
+## 2.8.4 - 2015-05-14
+
+* `Aws\DirectoryService` - Added support for the AWS Directory Service.
+* `Aws\CloudWatchLogs` - Adds support for the FilterLogEvents operation.
+* `Aws\CloudFormation` - Adds additional data to the GetTemplateSummary
+  operation.
+* `Aws\Ec2` - Adds support for Amazon VPC endpoints for Amazon S3 and APIs for
+  migrating Elastic IP Address from EC2-Classic to EC2-VPC.
+* `Aws\Ec2` - Fixed an issue with cross-region CopySnapshot such that it now
+  works with temporary credentials.
+* `Aws\Common` - During credential discovery, an invalid credentials file now
+  allows failover to Instance Profile credentials.
+
 ## 2.8.3 - 2015-05-07
 
 * `Aws\Glacier` - Added support for vault access policies.

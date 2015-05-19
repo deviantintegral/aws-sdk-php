@@ -35,9 +35,9 @@ sys.path.append(os.path.abspath('_ext/'))
 
 # Add any Sphinx extension module names here, as strings. They can be extensions
 # coming with Sphinx (named 'sphinx.ext.*') or your custom ones.
-extensions = ['aws', 'rst2pdf.pdfbuilder']
+extensions = ['aws']
 
-# index, rst2pdf, title, author
+# index, title, author
 pdf_documents = [('index', u'aws-sdk-php-guide', u'AWS SDK for PHP', u'Amazon Web Services')]
 
 # Add any paths that contain templates here, relative to this directory.
@@ -78,7 +78,7 @@ release = version
 
 # List of patterns, relative to source directory, that match files and
 # directories to ignore when looking for source files.
-exclude_patterns = ['_build', 'vendor']
+exclude_patterns = ['_build', 'vendor', 'venv']
 
 # The reST default role (used for this markup: `text`) to use for all documents.
 #default_role = None
