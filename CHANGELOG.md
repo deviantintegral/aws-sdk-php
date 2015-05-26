@@ -1,5 +1,15 @@
 # CHANGELOG
 
+## 2.8.6 - 2015-05-21
+
+* `Aws\ElasticBeanstalk` - Added support for ResourceName configuration.
+* `Aws\ElasticTranscoder` - Added support for configuring AudioPackingMode and
+  additional CodecOptions.
+* `Aws\Kinesis` - Added support for MillisBehindLatest in the result of
+  GetRecordsOutput.
+* `Aws\Kms` - Added support for the UpdateAlias operation.
+* `Aws\Lambda` - Fixed an issue with the UpdateFunctionCode operation.
+
 ## 2.8.5 - 2015-05-18
 
 * `Aws\Ec2\Ec2Client` - Added support for the new spot fleet API operations.
