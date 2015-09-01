@@ -2094,6 +2094,36 @@ return array (
                                     'sentAs' => 'Event',
                                 ),
                             ),
+                            'Filter' => array(
+                                'type' => 'object',
+                                'properties' => array(
+                                    'Key' => array(
+                                        'type' => 'object',
+                                        'sentAs' => 'S3Key',
+                                        'properties' => array(
+                                            'FilterRules' => array(
+                                                'type' => 'array',
+                                                'data' => array(
+                                                    'xmlFlattened' => true,
+                                                ),
+                                                'items' => array(
+                                                    'name' => 'FilterRule',
+                                                    'type' => 'object',
+                                                    'sentAs' => 'FilterRule',
+                                                    'properties' => array(
+                                                        'Name' => array(
+                                                            'type' => 'string',
+                                                        ),
+                                                        'Value' => array(
+                                                            'type' => 'string',
+                                                        ),
+                                                    ),
+                                                ),
+                                            ),
+                                        ),
+                                    ),
+                                ),
+                            ),
                         ),
                     ),
                 ),
@@ -2128,6 +2158,36 @@ return array (
                                     'sentAs' => 'Event',
                                 ),
                             ),
+                            'Filter' => array(
+                                'type' => 'object',
+                                'properties' => array(
+                                    'Key' => array(
+                                        'type' => 'object',
+                                        'sentAs' => 'S3Key',
+                                        'properties' => array(
+                                            'FilterRules' => array(
+                                                'type' => 'array',
+                                                'data' => array(
+                                                    'xmlFlattened' => true,
+                                                ),
+                                                'items' => array(
+                                                    'name' => 'FilterRule',
+                                                    'type' => 'object',
+                                                    'sentAs' => 'FilterRule',
+                                                    'properties' => array(
+                                                        'Name' => array(
+                                                            'type' => 'string',
+                                                        ),
+                                                        'Value' => array(
+                                                            'type' => 'string',
+                                                        ),
+                                                    ),
+                                                ),
+                                            ),
+                                        ),
+                                    ),
+                                ),
+                            ),
                         ),
                     ),
                 ),
@@ -2160,6 +2220,36 @@ return array (
                                     'name' => 'Event',
                                     'type' => 'string',
                                     'sentAs' => 'Event',
+                                ),
+                            ),
+                            'Filter' => array(
+                                'type' => 'object',
+                                'properties' => array(
+                                    'Key' => array(
+                                        'type' => 'object',
+                                        'sentAs' => 'S3Key',
+                                        'properties' => array(
+                                            'FilterRules' => array(
+                                                'type' => 'array',
+                                                'data' => array(
+                                                    'xmlFlattened' => true,
+                                                ),
+                                                'items' => array(
+                                                    'name' => 'FilterRule',
+                                                    'type' => 'object',
+                                                    'sentAs' => 'FilterRule',
+                                                    'properties' => array(
+                                                        'Name' => array(
+                                                            'type' => 'string',
+                                                        ),
+                                                        'Value' => array(
+                                                            'type' => 'string',
+                                                        ),
+                                                    ),
+                                                ),
+                                            ),
+                                        ),
+                                    ),
                                 ),
                             ),
                         ),
@@ -3781,6 +3871,37 @@ return array (
                                     'sentAs' => 'Event',
                                 ),
                             ),
+                            'Filter' => array(
+                                'type' => 'object',
+                                'properties' => array(
+                                    'Key' => array(
+                                        'type' => 'object',
+                                        'sentAs' => 'S3Key',
+                                        'properties' => array(
+                                            'FilterRules' => array(
+                                                'type' => 'array',
+                                                'sentAs' => 'FilterRule',
+                                                'data' => array(
+                                                    'xmlFlattened' => true,
+                                                ),
+                                                'items' => array(
+                                                    'name' => 'FilterRule',
+                                                    'type' => 'object',
+                                                    'sentAs' => 'FilterRule',
+                                                    'properties' => array(
+                                                        'Name' => array(
+                                                            'type' => 'string',
+                                                        ),
+                                                        'Value' => array(
+                                                            'type' => 'string',
+                                                        ),
+                                                    ),
+                                                ),
+                                            ),
+                                        ),
+                                    ),
+                                ),
+                            ),
                         ),
                     ),
                 ),
@@ -3815,6 +3936,37 @@ return array (
                                     'sentAs' => 'Event',
                                 ),
                             ),
+                            'Filter' => array(
+                                'type' => 'object',
+                                'properties' => array(
+                                    'Key' => array(
+                                        'type' => 'object',
+                                        'sentAs' => 'S3Key',
+                                        'properties' => array(
+                                            'FilterRules' => array(
+                                                'type' => 'array',
+                                                'sentAs' => 'FilterRule',
+                                                'data' => array(
+                                                    'xmlFlattened' => true,
+                                                ),
+                                                'items' => array(
+                                                    'name' => 'FilterRule',
+                                                    'type' => 'object',
+                                                    'sentAs' => 'FilterRule',
+                                                    'properties' => array(
+                                                        'Name' => array(
+                                                            'type' => 'string',
+                                                        ),
+                                                        'Value' => array(
+                                                            'type' => 'string',
+                                                        ),
+                                                    ),
+                                                ),
+                                            ),
+                                        ),
+                                    ),
+                                ),
+                            ),
                         ),
                     ),
                 ),
@@ -3847,6 +3999,37 @@ return array (
                                     'name' => 'Event',
                                     'type' => 'string',
                                     'sentAs' => 'Event',
+                                ),
+                            ),
+                            'Filter' => array(
+                                'type' => 'object',
+                                'properties' => array(
+                                    'Key' => array(
+                                        'type' => 'object',
+                                        'sentAs' => 'S3Key',
+                                        'properties' => array(
+                                            'FilterRules' => array(
+                                                'type' => 'array',
+                                                'sentAs' => 'FilterRule',
+                                                'data' => array(
+                                                    'xmlFlattened' => true,
+                                                ),
+                                                'items' => array(
+                                                    'name' => 'FilterRule',
+                                                    'type' => 'object',
+                                                    'sentAs' => 'FilterRule',
+                                                    'properties' => array(
+                                                        'Name' => array(
+                                                            'type' => 'string',
+                                                        ),
+                                                        'Value' => array(
+                                                            'type' => 'string',
+                                                        ),
+                                                    ),
+                                                ),
+                                            ),
+                                        ),
+                                    ),
                                 ),
                             ),
                         ),
@@ -4134,6 +4317,11 @@ return array (
                     'location' => 'header',
                     'sentAs' => 'Content-Language',
                 ),
+                'ContentRange' => array(
+                    'type' => 'string',
+                    'location' => 'header',
+                    'sentAs' => 'Content-Range',
+                ),
                 'ContentType' => array(
                     'type' => 'string',
                     'location' => 'header',
@@ -4175,6 +4363,11 @@ return array (
                     'type' => 'string',
                     'location' => 'header',
                     'sentAs' => 'x-amz-server-side-encryption-aws-kms-key-id',
+                ),
+                'StorageClass' => array(
+                    'type' => 'string',
+                    'location' => 'header',
+                    'sentAs' => 'x-amz-storage-class',
                 ),
                 'RequestCharged' => array(
                     'type' => 'string',
@@ -4398,6 +4591,11 @@ return array (
                     'type' => 'string',
                     'location' => 'header',
                     'sentAs' => 'x-amz-server-side-encryption-aws-kms-key-id',
+                ),
+                'StorageClass' => array(
+                    'type' => 'string',
+                    'location' => 'header',
+                    'sentAs' => 'x-amz-storage-class',
                 ),
                 'RequestCharged' => array(
                     'type' => 'string',

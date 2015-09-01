@@ -106,10 +106,22 @@ return array(
 
         'cognitosync' => array('extends' => 'cognito-sync'),
 
+        'codecommit' => array(
+            'alias'   => 'CodeCommit',
+            'extends' => 'default_settings',
+            'class'   => 'Aws\CodeCommit\CodeCommitClient'
+        ),
+
         'codedeploy' => array(
             'alias'   => 'CodeDeploy',
             'extends' => 'default_settings',
             'class'   => 'Aws\CodeDeploy\CodeDeployClient'
+        ),
+
+        'codepipeline' => array(
+            'alias'   => 'CodePipeline',
+            'extends' => 'default_settings',
+            'class'   => 'Aws\CodePipeline\CodePipelineClient'
         ),
 
         'config' => array(
@@ -122,6 +134,12 @@ return array(
             'alias'   => 'DataPipeline',
             'extends' => 'default_settings',
             'class'   => 'Aws\DataPipeline\DataPipelineClient'
+        ),
+
+        'devicefarm' => array(
+            'alias'   => 'DeviceFarm',
+            'extends' => 'default_settings',
+            'class'   => 'Aws\DeviceFarm\DeviceFarmClient'
         ),
 
         'directconnect' => array(
@@ -149,6 +167,12 @@ return array(
             )
         ),
 
+        'dynamodbstreams' => array(
+            'alias'   => 'DynamoDbStreams',
+            'extends' => 'default_settings',
+            'class'   => 'Aws\DynamoDbStreams\DynamoDbStreamsClient'
+        ),
+
         'ec2' => array(
             'alias'   => 'Ec2',
             'extends' => 'default_settings',
@@ -171,6 +195,12 @@ return array(
             'alias'   => 'ElasticBeanstalk',
             'extends' => 'default_settings',
             'class'   => 'Aws\ElasticBeanstalk\ElasticBeanstalkClient'
+        ),
+
+        'efs' => array(
+            'alias'   => 'Efs',
+            'extends' => 'default_settings',
+            'class'   => 'Aws\Efs\EfsClient'
         ),
 
         'elasticloadbalancing' => array(

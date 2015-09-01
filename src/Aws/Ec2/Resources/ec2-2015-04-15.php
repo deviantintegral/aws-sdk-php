@@ -1110,6 +1110,15 @@ return array (
                     'type' => 'string',
                     'location' => 'aws.query',
                 ),
+                'Encrypted' => array(
+                    'type' => 'boolean',
+                    'format' => 'boolean-string',
+                    'location' => 'aws.query',
+                ),
+                'KmsKeyId' => array(
+                    'type' => 'string',
+                    'location' => 'aws.query',
+                ),
             ),
         ),
         'CreateCustomerGateway' => array(
@@ -1196,6 +1205,59 @@ return array (
                             ),
                         ),
                     ),
+                ),
+            ),
+        ),
+        'CreateFlowLogs' => array(
+            'httpMethod' => 'POST',
+            'uri' => '/',
+            'class' => 'Aws\\Common\\Command\\QueryCommand',
+            'responseClass' => 'CreateFlowLogsResult',
+            'responseType' => 'model',
+            'parameters' => array(
+                'Action' => array(
+                    'static' => true,
+                    'location' => 'aws.query',
+                    'default' => 'CreateFlowLogs',
+                ),
+                'Version' => array(
+                    'static' => true,
+                    'location' => 'aws.query',
+                    'default' => '2015-04-15',
+                ),
+                'ResourceIds' => array(
+                    'required' => true,
+                    'type' => 'array',
+                    'location' => 'aws.query',
+                    'sentAs' => 'ResourceId',
+                    'items' => array(
+                        'name' => 'ResourceId',
+                        'type' => 'string',
+                    ),
+                ),
+                'ResourceType' => array(
+                    'required' => true,
+                    'type' => 'string',
+                    'location' => 'aws.query',
+                ),
+                'TrafficType' => array(
+                    'required' => true,
+                    'type' => 'string',
+                    'location' => 'aws.query',
+                ),
+                'LogGroupName' => array(
+                    'required' => true,
+                    'type' => 'string',
+                    'location' => 'aws.query',
+                ),
+                'DeliverLogsPermissionArn' => array(
+                    'required' => true,
+                    'type' => 'string',
+                    'location' => 'aws.query',
+                ),
+                'ClientToken' => array(
+                    'type' => 'string',
+                    'location' => 'aws.query',
                 ),
             ),
         ),
@@ -1701,10 +1763,6 @@ return array (
                     'location' => 'aws.query',
                 ),
                 'VpcPeeringConnectionId' => array(
-                    'type' => 'string',
-                    'location' => 'aws.query',
-                ),
-                'ClientToken' => array(
                     'type' => 'string',
                     'location' => 'aws.query',
                 ),
@@ -2274,6 +2332,35 @@ return array (
                     'required' => true,
                     'type' => 'string',
                     'location' => 'aws.query',
+                ),
+            ),
+        ),
+        'DeleteFlowLogs' => array(
+            'httpMethod' => 'POST',
+            'uri' => '/',
+            'class' => 'Aws\\Common\\Command\\QueryCommand',
+            'responseClass' => 'DeleteFlowLogsResult',
+            'responseType' => 'model',
+            'parameters' => array(
+                'Action' => array(
+                    'static' => true,
+                    'location' => 'aws.query',
+                    'default' => 'DeleteFlowLogs',
+                ),
+                'Version' => array(
+                    'static' => true,
+                    'location' => 'aws.query',
+                    'default' => '2015-04-15',
+                ),
+                'FlowLogIds' => array(
+                    'required' => true,
+                    'type' => 'array',
+                    'location' => 'aws.query',
+                    'sentAs' => 'FlowLogId',
+                    'items' => array(
+                        'name' => 'FlowLogId',
+                        'type' => 'string',
+                    ),
                 ),
             ),
         ),
@@ -3387,6 +3474,63 @@ return array (
                         'name' => 'ExportTaskId',
                         'type' => 'string',
                     ),
+                ),
+            ),
+        ),
+        'DescribeFlowLogs' => array(
+            'httpMethod' => 'POST',
+            'uri' => '/',
+            'class' => 'Aws\\Common\\Command\\QueryCommand',
+            'responseClass' => 'DescribeFlowLogsResult',
+            'responseType' => 'model',
+            'parameters' => array(
+                'Action' => array(
+                    'static' => true,
+                    'location' => 'aws.query',
+                    'default' => 'DescribeFlowLogs',
+                ),
+                'Version' => array(
+                    'static' => true,
+                    'location' => 'aws.query',
+                    'default' => '2015-04-15',
+                ),
+                'FlowLogIds' => array(
+                    'type' => 'array',
+                    'location' => 'aws.query',
+                    'sentAs' => 'FlowLogId',
+                    'items' => array(
+                        'name' => 'FlowLogId',
+                        'type' => 'string',
+                    ),
+                ),
+                'Filter' => array(
+                    'type' => 'array',
+                    'location' => 'aws.query',
+                    'items' => array(
+                        'name' => 'Filter',
+                        'type' => 'object',
+                        'properties' => array(
+                            'Name' => array(
+                                'type' => 'string',
+                            ),
+                            'Values' => array(
+                                'type' => 'array',
+                                'sentAs' => 'Value',
+                                'items' => array(
+                                    'name' => 'Value',
+                                    'type' => 'string',
+                                ),
+                            ),
+                        ),
+                    ),
+                ),
+                'NextToken' => array(
+                    'type' => 'string',
+                    'location' => 'aws.query',
+                ),
+                'MaxResults' => array(
+                    'type' => 'numeric',
+                    'location' => 'aws.query',
                 ),
             ),
         ),
@@ -7928,7 +8072,7 @@ return array (
                             'type' => 'array',
                             'minItems' => 1,
                             'items' => array(
-                                'name' => 'LaunchSpecification',
+                                'name' => 'SpotFleetLaunchSpecification',
                                 'type' => 'object',
                                 'properties' => array(
                                     'ImageId' => array(
@@ -8023,9 +8167,14 @@ return array (
                                             ),
                                         ),
                                     ),
-                                    'MonitoringEnabled' => array(
-                                        'type' => 'boolean',
-                                        'format' => 'boolean-string',
+                                    'Monitoring' => array(
+                                        'type' => 'object',
+                                        'properties' => array(
+                                            'Enabled' => array(
+                                                'type' => 'boolean',
+                                                'format' => 'boolean-string',
+                                            ),
+                                        ),
                                     ),
                                     'SubnetId' => array(
                                         'type' => 'string',
@@ -9803,6 +9952,11 @@ return array (
                     'location' => 'xml',
                     'sentAs' => 'ownerId',
                 ),
+                'Return' => array(
+                    'type' => 'boolean',
+                    'location' => 'xml',
+                    'sentAs' => 'return',
+                ),
             ),
         ),
         'CopyImageResult' => array(
@@ -9931,6 +10085,57 @@ return array (
                                     'Value' => array(
                                         'type' => 'string',
                                         'sentAs' => 'value',
+                                    ),
+                                ),
+                            ),
+                        ),
+                    ),
+                ),
+            ),
+        ),
+        'CreateFlowLogsResult' => array(
+            'type' => 'object',
+            'additionalProperties' => true,
+            'properties' => array(
+                'FlowLogIds' => array(
+                    'type' => 'array',
+                    'location' => 'xml',
+                    'sentAs' => 'flowLogIdSet',
+                    'items' => array(
+                        'name' => 'item',
+                        'type' => 'string',
+                        'sentAs' => 'item',
+                    ),
+                ),
+                'ClientToken' => array(
+                    'type' => 'string',
+                    'location' => 'xml',
+                    'sentAs' => 'clientToken',
+                ),
+                'Unsuccessful' => array(
+                    'type' => 'array',
+                    'location' => 'xml',
+                    'sentAs' => 'unsuccessful',
+                    'items' => array(
+                        'name' => 'item',
+                        'type' => 'object',
+                        'sentAs' => 'item',
+                        'properties' => array(
+                            'ResourceId' => array(
+                                'type' => 'string',
+                                'sentAs' => 'resourceId',
+                            ),
+                            'Error' => array(
+                                'type' => 'object',
+                                'sentAs' => 'error',
+                                'properties' => array(
+                                    'Code' => array(
+                                        'type' => 'string',
+                                        'sentAs' => 'code',
+                                    ),
+                                    'Message' => array(
+                                        'type' => 'string',
+                                        'sentAs' => 'message',
                                     ),
                                 ),
                             ),
@@ -10548,11 +10753,6 @@ return array (
                     'type' => 'boolean',
                     'location' => 'xml',
                     'sentAs' => 'return',
-                ),
-                'ClientToken' => array(
-                    'type' => 'string',
-                    'location' => 'xml',
-                    'sentAs' => 'clientToken',
                 ),
             ),
         ),
@@ -11360,6 +11560,42 @@ return array (
                 ),
             ),
         ),
+        'DeleteFlowLogsResult' => array(
+            'type' => 'object',
+            'additionalProperties' => true,
+            'properties' => array(
+                'Unsuccessful' => array(
+                    'type' => 'array',
+                    'location' => 'xml',
+                    'sentAs' => 'unsuccessful',
+                    'items' => array(
+                        'name' => 'item',
+                        'type' => 'object',
+                        'sentAs' => 'item',
+                        'properties' => array(
+                            'ResourceId' => array(
+                                'type' => 'string',
+                                'sentAs' => 'resourceId',
+                            ),
+                            'Error' => array(
+                                'type' => 'object',
+                                'sentAs' => 'error',
+                                'properties' => array(
+                                    'Code' => array(
+                                        'type' => 'string',
+                                        'sentAs' => 'code',
+                                    ),
+                                    'Message' => array(
+                                        'type' => 'string',
+                                        'sentAs' => 'message',
+                                    ),
+                                ),
+                            ),
+                        ),
+                    ),
+                ),
+            ),
+        ),
         'DeleteVpcEndpointsResult' => array(
             'type' => 'object',
             'additionalProperties' => true,
@@ -12075,6 +12311,65 @@ return array (
                             ),
                         ),
                     ),
+                ),
+            ),
+        ),
+        'DescribeFlowLogsResult' => array(
+            'type' => 'object',
+            'additionalProperties' => true,
+            'properties' => array(
+                'FlowLogs' => array(
+                    'type' => 'array',
+                    'location' => 'xml',
+                    'sentAs' => 'flowLogSet',
+                    'items' => array(
+                        'name' => 'item',
+                        'type' => 'object',
+                        'sentAs' => 'item',
+                        'properties' => array(
+                            'CreationTime' => array(
+                                'type' => 'string',
+                                'sentAs' => 'creationTime',
+                            ),
+                            'FlowLogId' => array(
+                                'type' => 'string',
+                                'sentAs' => 'flowLogId',
+                            ),
+                            'FlowLogStatus' => array(
+                                'type' => 'string',
+                                'sentAs' => 'flowLogStatus',
+                            ),
+                            'ResourceId' => array(
+                                'type' => 'string',
+                                'sentAs' => 'resourceId',
+                            ),
+                            'TrafficType' => array(
+                                'type' => 'string',
+                                'sentAs' => 'trafficType',
+                            ),
+                            'LogGroupName' => array(
+                                'type' => 'string',
+                                'sentAs' => 'logGroupName',
+                            ),
+                            'DeliverLogsStatus' => array(
+                                'type' => 'string',
+                                'sentAs' => 'deliverLogsStatus',
+                            ),
+                            'DeliverLogsErrorMessage' => array(
+                                'type' => 'string',
+                                'sentAs' => 'deliverLogsErrorMessage',
+                            ),
+                            'DeliverLogsPermissionArn' => array(
+                                'type' => 'string',
+                                'sentAs' => 'deliverLogsPermissionArn',
+                            ),
+                        ),
+                    ),
+                ),
+                'NextToken' => array(
+                    'type' => 'string',
+                    'location' => 'xml',
+                    'sentAs' => 'nextToken',
                 ),
             ),
         ),
@@ -15344,9 +15639,15 @@ return array (
                                                         ),
                                                     ),
                                                 ),
-                                                'MonitoringEnabled' => array(
-                                                    'type' => 'boolean',
-                                                    'sentAs' => 'monitoringEnabled',
+                                                'Monitoring' => array(
+                                                    'type' => 'object',
+                                                    'sentAs' => 'monitoring',
+                                                    'properties' => array(
+                                                        'Enabled' => array(
+                                                            'type' => 'boolean',
+                                                            'sentAs' => 'enabled',
+                                                        ),
+                                                    ),
                                                 ),
                                                 'SubnetId' => array(
                                                     'type' => 'string',
