@@ -744,7 +744,10 @@ class StreamWrapper
         // status line of the HTTP response.
         $headers = $this->body->getMetaData('wrapper_data');
 
-        if ($headers && isset($headers[0])) {
+        // "wrapper_data" could be not only an array.
+        // E.g., DrupalRemoteStreamWrapper has an object of its own.
+        // @see https://github.com/aws/aws-sdk-php/issues/909
+        if ($headers && is_array($headers) && isset($headers[0])) {
             $statusParts = explode(' ', $headers[0]);
             $status = $statusParts[1];
             if ($status != 200) {
