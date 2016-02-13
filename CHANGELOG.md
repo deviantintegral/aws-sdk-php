@@ -1,5 +1,107 @@
 # CHANGELOG
 
+## 2.8.27 - 2016-01-29
+
+* Remove all 'maxLength' constraints from models. This validation will be
+  handled server-side.
+
+## 2.8.26 - 2016-01-29
+
+* `Aws\Ssm` - Added support for long EC2 instance IDs.
+
+## 2.8.25 - 2016-01-25
+
+* `Aws\AutoScaling` - Added support for setting and describing instance
+  protection status.
+* `Aws\CloudFront` - Added support using AWS ACM certificates with CloudFront
+  distributions.
+* `Aws\CloudFront` - Added support for new origin security features.
+* `Aws\CloudFront` - Added support for GZip compression.
+* `Aws\Ec2` - Added support for EC2 dedicated hosts.
+* `Aws\Ec2` - Added support for scheduled instances.
+* `Aws\Ec2` - Added support for DNS resolution of public hostnames to private IP
+  addresses when queried over ClassicLink. Additionally, private hosted zones
+  associated with your VPC can now be accessed from a linked EC2-Classic
+  instance.
+* `Aws\Ec2` - Added support for managed NATs.
+* `Aws\Ec2` - Added support for specifying encryption on CopyImage commands.
+
+## 2.8.24 - 2015-11-16
+
+* `Aws\DeviceFarm` - Added support for managing projects, device pools, runs,
+  and uploads.
+* `Aws\DynamoDb` - Fixed bug where properly opening sessions might return false
+  on HHVM.
+* `Aws\DynamoDb` - Fixed bug where calling `session_regenerate_id` without
+  changing session data would prevent data from being carried over from the
+  previous session ID.
+* `Aws\Sts` - Added support for 64-character role session names.
+
+## 2.8.23 - 2015-11-02
+
+* `Aws\AutoScaling` - Added support for EBS encryption.
+* `Aws\Iam` - Added support for resource-based policy simulations.
+* `Aws\Iam` - Added support for service-aware policy simulation.
+* `Aws\Ssm` - Added support for EC2 Run Command, a new EC2 feature that enables
+  you to securely and remotely manage the configuration of your Amazon EC2
+  Windows instances.
+
+## 2.8.22 - 2015-10-15
+
+* `Aws\CloudFormation` - Added support for specifying affected resource types
+  in `CreateStack` and `UpdateStack` operations.
+* `Aws\CloudFormation` - Added support for the `DescribeAccountLimits` API.
+* `Aws\CloudFront` - Added support for WebACL identifiers and related
+  operations.
+* `Aws\Cloudtrail` - Added support for log file integrity validation, log
+  encryption with AWS KMS–Managed Keys (SSE-KMS), and trail tagging.
+* `Aws\CloudWatchLogs` - Added support for export task operations.
+* `Aws\ConfigService` - Added support for config rules, evaluation strategies,
+  and compliance querying.
+* `Aws\Ec2` - Added support for spot blocks.
+* `Aws\Ecs` - Added support for more Docker options hostname, Docker labels,
+  working directory, networking disabled, privileged execution, read-only root
+  filesystem, DNS servers, DNS search domains, ulimits, log configuration, extra
+  hosts (hosts to add to /etc/hosts), and security options (for MLS systems like
+  SELinux).
+* `Aws\Lambda` - Added support for function versioning.
+* `Aws\Kinesis` - Added support for increasing and decreasing stream retention
+  periods.
+* `Aws\Kms` - Added support for scheduling and cancelling key deletions and
+  listing retirable grants.
+* `Aws\S3` - Added support for specifying server side encryption on an when
+  uploading a part of a multipart upload.
+* `Aws\Ses` - Added support for inbound email APIs.
+* `Aws\Workspaces` - Added support for storage volume encryption with AWS KMS.
+
+## 2.8.21 - 2015-09-16
+
+* `Aws\Ec2` - Added support for the "diversified" SpotFleet allocation strategy.
+* `Aws\Ec2` - Added support for reading `StateMessage` and `DataEncryptionKeyId`
+  from a `DescribeSnapshots` response.
+* `Aws\Iam` - Added support for new policy simulation APIs.
+* `Aws\Kinesis` - Added support for timestamped GetRecords call.
+* `Aws\MachineLearning` - Fixed invalid validation constraint on `Predict`
+  operation.
+* `Aws\OpsWorks` - Added support for operations on ECS clusters.
+* `Aws\Route53` - Added support for calculated and latency health checks.
+* `Aws\S3` - Added support for new `STANDARD_IA` storage class.
+* `Aws\S3` - Added support for specifying storage class in cross-region
+  replication configuration.
+* `Aws\StorageGateway` - Added support for tagging and untagging resources.
+
+## 2.8.20 - 2015-09-03
+
+* `Aws\CodePipeline` - Added support for using encryption keys with artifact
+  stores.
+* `Aws\ConfigService` - Added support for the `ListDiscoveredResources`
+  operation and new resource types.
+* `Aws\Ec2` - Added support for using instance weights with the
+  `RequestSpotFleet` API.
+* `Aws\Sns` - Added support for configurable SigningCertURL host patterns.
+* `Aws\StorageGateway` - Added support for tagging and untagging resources.
+* Fixed issue with loading the phar from opcache.
+
 ## 2.8.19 - 2015-08-20
 
 * `Aws\S3` - Added support for event notification filters.
